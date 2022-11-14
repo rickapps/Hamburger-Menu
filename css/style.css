@@ -1,0 +1,162 @@
+#wrapper {
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header {
+    background-color: yellow;
+    width: 100%;
+}
+
+main {
+    width: 90vmin;
+    aspect-ratio: 1/1;
+    background-color: red;
+}
+
+#panel {
+    background-color: grey;
+    flex-grow: 1;
+    min-width: 45vmin;
+}
+
+footer {
+    background-color: green;
+    width: 100%;
+}
+
+/* Navigation Menu */
+/* Hide the checkbox */
+#mnu-checkbox {
+    display: none;
+}
+
+/* Keep the logo on the left */
+.mnu-logo {
+    color: red;
+    float: left;
+    font-size: 1em;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+/* Make the label into a hotspot */
+/* Use padding to increase hotspot area */
+/* That we can mouse over */
+/* Float the label to the right */
+.mnu-button {
+    cursor: pointer;
+    float: right;
+    padding: 12px 12px;
+    /* Cannot select for copy/paste */
+    user-select: none;
+}
+
+.mnu-list {
+    margin: 0;
+    padding: 0;
+    /* Can be circle, square, none, or other shape */
+    list-style: none;
+    /* Clip what does not fit - no scrolling or extending */
+    overflow: hidden;
+}
+
+.mnu-list {
+    clear: both;
+    /* Make the menu list not visible */
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.mnu-list a:hover {
+    background-color: green;
+}
+
+/* Draw the meat (middle line) 
+  of the hamburger */
+.mnu-icon {
+    background: red;
+    display: block;
+    height: 2px;
+    position: relative;
+    /* Make the meat disappear */
+    transition: background .2s ease-out;
+    width: 18px;
+}
+
+/* Make the two buns of the hamburger */
+.mnu-icon:before,
+.mnu-icon:after {
+    background: green;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+/* Bottom bun */
+.mnu-icon:before {
+    top: 5px;
+}
+
+/* Top bun */
+.mnu-icon:after {
+    top: -5px;
+}
+
+/* Allow the menu list to expand */
+#mnu-checkbox:checked~.mnu-list {
+    max-height: 300px;
+}
+
+/* Make the middle line disappear */
+#mnu-checkbox:checked~.mnu-button .mnu-icon {
+    background: transparent;
+}
+
+/* Rotate the top line counter clock-wise */
+#mnu-checkbox:checked~.mnu-button .mnu-icon:before {
+    transform: rotate(-45deg);
+}
+
+/* Rotate the bottom line clock-wise */
+#mnu-checkbox:checked~.mnu-button .mnu-icon:after {
+    transform: rotate(45deg);
+}
+
+/* Change the offset of our two buns so they */
+/* overlap.                                  */
+#mnu-checkbox:checked~.mnu-button:not(.steps) .mnu-icon:before,
+#mnu-checkbox:checked~.mnu-button:not(.steps) .mnu-icon:after {
+    top: 0;
+}
+
+/* 48em = 768px */
+/* For screens 48em or greater */
+@media only screen and (min-width: 48em) {
+    .mnu-list li {
+        float: left;
+    }
+
+    .mnu-list li a {
+        padding: 20px 30px;
+    }
+
+    /* Move the list to the right */
+    .mnu-list {
+        clear: none;
+        float: right;
+        /* Let menu be visible. Max-height was 0 before. */
+        max-height: none;
+    }
+
+    /* Hide the hamburger button */
+    .mnu-icon {
+        display: none;
+    }
+}
