@@ -8,6 +8,8 @@
 
 header {
     background-color: yellow;
+    position: relative;
+    height: 2em;
     width: 100%;
 }
 
@@ -28,6 +30,9 @@ footer {
     width: 100%;
 }
 
+/***************************************/
+/* Setup the hamburger button and logo */
+/***************************************/
 /* Navigation Menu */
 /* Hide the checkbox */
 #mnu-checkbox {
@@ -47,7 +52,7 @@ footer {
 
 /* The logo floats to right of the icon */
 .mnu-logo {
-    padding: 8px;
+    padding: 0.5em;
     float: right;
     display: block;
     color: red;
@@ -61,7 +66,7 @@ footer {
   .mnu-icon {
     float: left;  /* Left of the logo */
     position: relative;
-    top: 16px;   /* Move it down a bit */
+    top: 1em;   /* Move it down to the center */
     display: block;
     background: red;
     height: 2px;
@@ -97,32 +102,49 @@ footer {
     top: -5px;
 }
 
-/* Customize our menu list */
-.mnu-list {
-    margin: 0;
-    padding: 0;
-    /* Can be circle, square, none, or other shape */
-    list-style: none;
-    /* Clip what does not fit - no scrolling or extending */
-    overflow: hidden;
-}
-
+/*********************************************************/
+/*            Customize our menu list                    */
+/*********************************************************/
 .mnu-list {
     clear: both;
-    /* Make the menu list not visible */
-    max-height: 0;
-    transition: max-height .2s ease-out;
 }
-
-.mnu-list a:hover {
+/* Set properties for our <ul>s */
+.mnu-list, .mnu-list ul {
+    /* Position just below hamburger menu */
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    /* Can be circle, square, none, or other shape */
+    list-style: none;
+    display: none;
+}
+.mnu-list li {
+    position: relative;
+    background-color: orange;
+    width: 100px;
+}
+/* Style the sub menu */
+.mnu-list ul {
+    position: absolute;
+    top: 0;
+    left: 100px;
+}
+.mnu-list li:hover ul {
+    /* Display our submenu */
+    display: block;
+}
+.mnu-list li:hover {
     background-color: green;
 }
 
 
-/* Allow the menu list to expand */
-/* if the checkbox is checked    */
+/********** Check box is checked. **********************/
+/* Turn the hamburger into an X and display the menu.  */
+/*******************************************************/
 #mnu-checkbox:checked~.mnu-list {
-    max-height: 300px;
+    /* Expand the menu */
+    max-height: 12em;  
+    display: block;
 }
 
 /* Make the middle line (the meat */
@@ -150,19 +172,25 @@ footer {
 #mnu-checkbox:checked~.mnu-button:not(.steps) .mnu-icon::after {
     top: 0;
 }
+/***********************************************************/
+/*                 End of checkbox checked                 */
+/***********************************************************/
+
+/***********************************************************/
+/*                 Media statements                        */
+/***********************************************************/
 
 /* 48em = 768px */
-/* For screens 48em or greater */
+/* For wider screens, we can display menu all the time */
+/* No need to show the hamburger, just show the logo.  */
 @media only screen and (min-width: 48em) {
-    .mnu-list li {
-        float: left;
+
+    /* Hide the hamburger button */
+    .mnu-icon {
+        display: none;
     }
 
-    .mnu-list li a {
-        padding: 20px 30px;
-    }
-
-    /* Move the list to the right */
+    /* Move the menu to the right and make horizontal */
     .mnu-list {
         clear: none;
         float: right;
@@ -170,8 +198,8 @@ footer {
         max-height: none;
     }
 
-    /* Hide the hamburger button */
-    .mnu-icon {
-        display: none;
+    .mnu-list li a {
+        padding: 20px 30px;
     }
+/*******************  End of media ***********************/
 }
