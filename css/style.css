@@ -9,7 +9,7 @@
 header {
     background-color: yellow;
     position: relative;
-    height: 2em;
+    height: 2rem;
     width: 100%;
 }
 
@@ -47,21 +47,23 @@ footer {
 
 /* The logo floats to right of the icon */
 .mnu-logo {
-    padding: 0.5em;
+    padding: 0.5rem;
     float: right;
     display: block;
     color: red;
-    font-size: 1em;
+    font-size: 1.0rem;
     text-decoration: none;
- }
+}
 
 /* Use a hamburger symbol as our icon.     */
 /* We will make the middle line (meat)     */
 /* by setting a solid background color.    */
-  .mnu-icon {
-    float: left;  /* Left of the logo */
+.mnu-icon {
+    float: left;
+    /* Left of the logo */
     position: relative;
-    top: 1em;   /* Move it down to the center */
+    top: 1rem;
+    /* Move it down to the center */
     display: block;
     background: red;
     height: 2px;
@@ -78,8 +80,10 @@ footer {
 /* contain.                                       */
 .mnu-icon::before,
 .mnu-icon::after {
-    background: green; /* Make an opaque background  */
-    content: '';         /* but keep the content empty */
+    background: green;
+    /* Make an opaque background  */
+    content: '';
+    /* but keep the content empty */
     display: block;
     height: 100%;
     position: absolute;
@@ -103,6 +107,7 @@ footer {
 .mnu-list {
     clear: both;
 }
+
 /* Set properties for our <ul>s */
 .mnu-list, .mnu-list ul {
     margin: 0;
@@ -113,23 +118,29 @@ footer {
     /* Hide both <ul>s */
     display: none;
 }
+
 .mnu-list li {
     position: relative;
     display: block;
-    width: 120px;
-    padding: 0.5em;
+    width: 8rem;
     float: none;
+    padding: 0.5em 0 0.5em 0.5rem;
     background-color: yellow;
 }
+
 .mnu-list li:hover {
     background-color: green;
 }
+
 .mnu-list ul {
+    margin: 0;
+    padding: 0;
     /* Position the submenu */
     position: absolute;
     top: 0;
-    left: 120px;
+    left: 8.5rem;
 }
+
 .mnu-list li:hover ul {
     /* Display our submenu */
     display: block;
@@ -141,7 +152,7 @@ footer {
 }
 
 /* Display the main menu */
-.mnu-button:focus ~.mnu-list {
+.mnu-button:focus~.mnu-list {
     /* Display the menu */
     display: block;
 }
@@ -175,6 +186,7 @@ footer {
 .mnu-button:focus .mnu-icon::after {
     top: 0;
 }
+
 /***********************************************************/
 /*                 End of checkbox checked                 */
 /***********************************************************/
@@ -198,11 +210,20 @@ footer {
         clear: none;
         display: block;
         text-align: center;
-        padding: 0.5em 0.5em;
+        padding: 0 0.5rem;
         float: right;
     }
+
+    .mnu-list ul {
+        top: 2rem;
+        left: 0;
+        text-align: center;
+    }
+
     .mnu-list li {
         float: left;
+        padding: 0.5rem 0.5rem 0.4rem 0.5rem;
     }
 }
+
 /*******************  End of media ***********************/
