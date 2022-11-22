@@ -33,11 +33,6 @@ footer {
 /***************************************/
 /* Setup the hamburger button and logo */
 /***************************************/
-/* Navigation Menu */
-/* Hide the checkbox */
-#mnu-checkbox {
-    display: none;
-}
 
 /* Use the label as a button.     */
 /* Float the label to the left    */
@@ -110,66 +105,74 @@ footer {
 }
 /* Set properties for our <ul>s */
 .mnu-list, .mnu-list ul {
-    /* Position just below hamburger menu */
     margin: 0;
     padding: 0;
     text-align: left;
     /* Can be circle, square, none, or other shape */
     list-style: none;
+    /* Hide both <ul>s */
     display: none;
 }
 .mnu-list li {
     position: relative;
-    background-color: orange;
-    width: 100px;
+    display: block;
+    width: 120px;
+    padding: 0.5em;
+    float: none;
+    background-color: yellow;
 }
-/* Style the sub menu */
+.mnu-list li:hover {
+    background-color: green;
+}
 .mnu-list ul {
+    /* Position the submenu */
     position: absolute;
     top: 0;
-    left: 100px;
+    left: 120px;
 }
 .mnu-list li:hover ul {
     /* Display our submenu */
     display: block;
 }
-.mnu-list li:hover {
-    background-color: green;
+
+/* Allow the 'x' to close the menu */
+.mnu-button:focus {
+    pointer-events: none;
 }
 
+/* Display the main menu */
+.mnu-button:focus ~.mnu-list {
+    /* Display the menu */
+    display: block;
+}
 
 /********** Check box is checked. **********************/
 /* Turn the hamburger into an X and display the menu.  */
 /*******************************************************/
-#mnu-checkbox:checked~.mnu-list {
-    /* Expand the menu */
-    max-height: 12em;  
-    display: block;
-}
 
 /* Make the middle line (the meat */
 /* of the hamburger) disappear if */
 /* the checkbox is checked        */
-#mnu-checkbox:checked~.mnu-button .mnu-icon {
+.mnu-button:focus .mnu-icon {
     background: transparent;
 }
 
 /* Rotate the top line counter clock-wise */
 /* when the checkbox is checked.          */
-#mnu-checkbox:checked~.mnu-button .mnu-icon::before {
+.mnu-button:focus .mnu-icon::before {
     transform: rotate(-45deg);
 }
 
 /* Rotate the bottom line clock-wise */
 /* when the checkbox is checked.     */
-#mnu-checkbox:checked~.mnu-button .mnu-icon::after {
+.mnu-button:focus .mnu-icon::after {
     transform: rotate(45deg);
 }
 
 /* Change the offset of our two buns so they */
 /* overlap when the checkbox is checked.     */
-#mnu-checkbox:checked~.mnu-button:not(.steps) .mnu-icon::before,
-#mnu-checkbox:checked~.mnu-button:not(.steps) .mnu-icon::after {
+.mnu-button:focus .mnu-icon::before,
+.mnu-button:focus .mnu-icon::after {
     top: 0;
 }
 /***********************************************************/
@@ -190,16 +193,16 @@ footer {
         display: none;
     }
 
-    /* Move the menu to the right and make horizontal */
+    /* Display the menu and move it to the right */
     .mnu-list {
         clear: none;
+        display: block;
+        text-align: center;
+        padding: 0.5em 0.5em;
         float: right;
-        /* Let menu be visible. Max-height was 0 before. */
-        max-height: none;
     }
-
-    .mnu-list li a {
-        padding: 20px 30px;
+    .mnu-list li {
+        float: left;
     }
-/*******************  End of media ***********************/
 }
+/*******************  End of media ***********************/
