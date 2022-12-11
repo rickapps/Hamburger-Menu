@@ -56,6 +56,14 @@ footer {
     text-decoration: none;
 }
 
+.mnu-long {
+    display: none;
+}
+
+.mnu-short {
+    display: inline;
+}
+
 /* Use a hamburger symbol as our icon.     */
 /* We will make the middle line (meat)     */
 /* by setting a solid background color.    */
@@ -209,6 +217,15 @@ footer {
     /* Hide the hamburger button */
     .mnu-icon {
         display: none;
+    }
+
+    /* Expand our logo */
+    .mnu-short {
+        display: none;
+    }
+
+    .mnu-long {
+        display: inline;
     }
 
     /* Display the menu and move it to the left */
