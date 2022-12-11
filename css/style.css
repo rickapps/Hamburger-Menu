@@ -152,10 +152,9 @@ footer {
     display: block;
 }
 
-/* Allow the 'x' to close the menu */
-.mnu-button:focus {
-    pointer-events: none;
-}
+/********** Hamburger Button has Focus. *****************/
+/* Turn the hamburger into an X and display the menu.  */
+/*******************************************************/
 
 /* Display the main menu */
 .mnu-button:focus~.mnu-list {
@@ -163,45 +162,46 @@ footer {
     display: block;
 }
 
-/********** Check box is checked. **********************/
-/* Turn the hamburger into an X and display the menu.  */
-/*******************************************************/
-
 /* Make the middle line (the meat */
 /* of the hamburger) disappear if */
-/* the checkbox is checked        */
+/* the button has focus           */
 .mnu-button:focus .mnu-icon {
     background: transparent;
 }
 
 /* Rotate the top line counter clock-wise */
-/* when the checkbox is checked.          */
+/* when we have focus.                    */
 .mnu-button:focus .mnu-icon::before {
     transform: rotate(-45deg);
 }
 
 /* Rotate the bottom line clock-wise */
-/* when the checkbox is checked.     */
+/* when the button has focus.        */
 .mnu-button:focus .mnu-icon::after {
     transform: rotate(45deg);
 }
 
 /* Change the offset of our two buns so they */
-/* overlap when the checkbox is checked.     */
+/* overlap when the button has focus.        */
 .mnu-button:focus .mnu-icon::before,
 .mnu-button:focus .mnu-icon::after {
     top: 0;
 }
 
+/* Allow the 'x' to close the menu */
+.mnu-button:focus {
+    pointer-events: none;
+}
+
+
 /***********************************************************/
-/*                 End of checkbox checked                 */
+/*                 End of has focus                        */
 /***********************************************************/
 
 /***********************************************************/
 /*                 Media statements                        */
 /***********************************************************/
 
-/* 48em = 768px */
 /* For wider screens, we can display menu all the time */
 /* No need to show the hamburger, just show the logo.  */
 @media only screen and (min-width: 60rem) {
@@ -211,7 +211,7 @@ footer {
         display: none;
     }
 
-    /* Display the menu and move it to the right */
+    /* Display the menu and move it to the left */
     .mnu-list {
         clear: none;
         display: block;
