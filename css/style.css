@@ -47,11 +47,12 @@ footer {
 
 /* The logo floats to right of the icon */
 .mnu-logo {
-    padding: 0.5rem;
+    padding: 0;
+    margin: 0 0.5rem;
     float: right;
     display: block;
     color: red;
-    font-size: 1.0rem;
+    font-size: 1.5rem;
     text-decoration: none;
 }
 
@@ -119,12 +120,17 @@ footer {
     display: none;
 }
 
+.mnu-list a {
+    padding: 0;
+    margin: 0;
+}
+
 .mnu-list li {
     position: relative;
     display: block;
     width: 8rem;
     float: none;
-    padding: 0.5em 0 0.5em 0.5rem;
+    padding: 0.5rem 0 0.5rem 0.5rem;
     background-color: yellow;
 }
 
@@ -198,7 +204,7 @@ footer {
 /* 48em = 768px */
 /* For wider screens, we can display menu all the time */
 /* No need to show the hamburger, just show the logo.  */
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 60rem) {
 
     /* Hide the hamburger button */
     .mnu-icon {
@@ -211,7 +217,7 @@ footer {
         display: block;
         text-align: center;
         padding: 0 0.5rem;
-        float: right;
+        float: left;
     }
 
     .mnu-list ul {
@@ -222,7 +228,7 @@ footer {
 
     .mnu-list li {
         float: left;
-        padding: 0.5rem 0.5rem 0.4rem 0.5rem;
+        padding: 0.3rem 0.5rem 0.25rem 0.5rem;
     }
 }
 
