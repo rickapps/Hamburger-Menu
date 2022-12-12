@@ -131,6 +131,8 @@ footer {
 .mnu-list a {
     padding: 0;
     margin: 0;
+    text-decoration: none;
+    color: inherit;
 }
 
 .mnu-list li {
@@ -140,10 +142,12 @@ footer {
     float: none;
     padding: 0.5rem 0 0.5rem 0.5rem;
     background-color: yellow;
+    color: darkgreen;
 }
 
 .mnu-list li:hover {
     background-color: green;
+    color: yellow;
 }
 
 .mnu-list ul {
@@ -190,21 +194,16 @@ footer {
 }
 
 /* Change the offset of our two buns so they */
-/* overlap when the button has focus.        */
+/* intersect when the button has focus.      */
 .mnu-button:focus .mnu-icon::before,
 .mnu-button:focus .mnu-icon::after {
     top: 0;
 }
 
-/* Allow the 'x' to close the menu */
+/* Allow the 'X' to close the menu */
 .mnu-button:focus {
     pointer-events: none;
 }
-
-
-/***********************************************************/
-/*                 End of has focus                        */
-/***********************************************************/
 
 /***********************************************************/
 /*                 Media statements                        */
@@ -248,5 +247,3 @@ footer {
         padding: 0.3rem 0.5rem 0.25rem 0.5rem;
     }
 }
-
-/*******************  End of media ***********************/
